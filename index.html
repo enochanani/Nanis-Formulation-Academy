@@ -269,7 +269,43 @@
   .bot-item .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#B9D6BC;letter-spacing:0.08em;}
   .bot-item h4{font-size:16.5px;margin-top:8px;color:#fff;font-weight:500;}
 
-  /* ---------- CTA ---------- */
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials{padding:88px 0;background:var(--paper);border-bottom:1px solid var(--line);}
+  .testimonial-stage{
+    position:relative;max-width:760px;margin:0 auto;
+    min-height:280px;
+  }
+  .t-slide{
+    position:absolute;inset:0;
+    opacity:0;transform:translateX(24px);
+    transition:opacity .6s ease, transform .6s ease;
+    pointer-events:none;
+  }
+  .t-slide.active{
+    position:relative;
+    opacity:1;transform:translateX(0);
+    pointer-events:auto;
+  }
+  .t-card{
+    background:var(--paper-2);border:1px solid var(--line);border-radius:6px;
+    padding:38px 40px;text-align:center;
+  }
+  .t-mark{font-family:'Fraunces',serif;font-size:52px;color:var(--amber);line-height:1;margin-bottom:6px;}
+  .t-quote{font-size:17px;line-height:1.6;color:var(--ink);max-width:56ch;margin:0 auto 22px;}
+  .t-who{display:flex;flex-direction:column;align-items:center;gap:4px;}
+  .t-name{font-family:'Fraunces',serif;font-weight:600;font-size:16px;}
+  .t-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:var(--sage-deep);text-transform:uppercase;}
+  .t-controls{display:flex;align-items:center;justify-content:center;gap:22px;margin-top:34px;}
+  .t-arrow{
+    width:38px;height:38px;border-radius:50%;border:1px solid var(--line-dark);
+    background:transparent;color:var(--ink);cursor:pointer;font-size:16px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .t-arrow:hover{background:var(--ink);color:var(--paper);}
+  .t-dots{display:flex;gap:9px;}
+  .t-dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;}
+  .t-dot.active{background:var(--amber-deep);}
+
   .cta{padding:90px 0;background:var(--ink);color:var(--paper);text-align:center;}
   .cta h2{font-size:clamp(26px,4vw,40px);max-width:16ch;margin:16px auto 18px;}
   .cta p{color:rgba(245,239,222,0.72);max-width:52ch;margin:0 auto 34px;font-size:15.5px;}
@@ -333,6 +369,7 @@
     <nav class="links" id="navLinks">
       <a href="#pathway">Pathway</a>
       <a href="#schools">Schools</a>
+      <a href="#testimonials">Reviews</a>
       <a href="#innovation">Innovation Centre</a>
       <a href="#enroll" class="nav-cta">Enroll now</a>
     </nav>
@@ -383,7 +420,7 @@
         <p>Most short courses teach a recipe. Nanis Formulations Academy teaches the science underneath the recipe, so a graduate can troubleshoot a failed batch, adjust a formula when a raw material changes, and scale a product from a beaker to a production line with confidence.</p>
         <p>Every certificate programme sits inside a wider system built around five schools, a three level pathway, and a research centre dedicated to Ghanaian and African raw materials.</p>
         <div class="founder-tag">
-          <b>Led by a working formulator.</b> The academy is founded by ENOCH ANANI; the Lead Formulator of Nanis Formulations, a manufacturing firm, which means every module is grounded in what actually happens on a production floor.
+          <b>Led by a working formulator.</b> The academy is founded by the Lead Formulator of Nanis Formulations, a manufacturing firm, which means every module is grounded in what actually happens on a production floor.
         </div>
       </div>
     </div>
@@ -637,19 +674,70 @@
     </div>
   </section>
 
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">From Google Reviews</p>
+        <h2>What students say after training</h2>
+        <p>Verified feedback from students who completed formulation training with Nanis.</p>
+      </div>
+
+      <div class="testimonial-stage">
+        <div class="t-slide active">
+          <div class="t-card">
+            <div class="t-mark">&ldquo;</div>
+            <p class="t-quote">He is a great trainer. Very patient with his students and always ready to help. Much love.</p>
+            <div class="t-who">
+              <span class="t-name">Khadija Badiko</span>
+              <span class="t-tag">Google Review</span>
+            </div>
+          </div>
+        </div>
+        <div class="t-slide">
+          <div class="t-card">
+            <div class="t-mark">&ldquo;</div>
+            <p class="t-quote">Being trained by Nanis Formulations on how to formulate multipurpose liquid is the best experience I have ever had. His patience and well detailed explanations helped me improve a lot on my formulation journey. After implementing what I was taught, I have seen lots of positive feedback from my customers. I have never regretted joining the online class.</p>
+            <div class="t-who">
+              <span class="t-name">Fatou Marong</span>
+              <span class="t-tag">Google Review</span>
+            </div>
+          </div>
+        </div>
+        <div class="t-slide">
+          <div class="t-card">
+            <div class="t-mark">&ldquo;</div>
+            <p class="t-quote">My training with you was very informative and interesting. I like how you take your time to explain things in detail for me to understand, and I can boldly formulate with ease. Thank you so much, I cannot wait to work with you again.</p>
+            <div class="t-who">
+              <span class="t-name">Abena Theresa</span>
+              <span class="t-tag">Google Review</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-controls">
+        <button class="t-arrow" id="tPrev" aria-label="Previous review">&#8592;</button>
+        <div class="t-dots" id="tDots"></div>
+        <button class="t-arrow" id="tNext" aria-label="Next review">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
+
   <section class="cta" id="enroll">
     <div class="wrap">
       <p class="eyebrow on-dark">Enroll</p>
       <h2>Start at Level 1. Leave with a formula you can sell.</h2>
       <p>Applications for the School of Formulation Science foundation intake are open. Reach out to reserve a seat or to ask which school fits where you want to go.</p>
       <div class="btn-row">
-        <a href="mailto:[nanisformulations@gmail.com]" class="btn btn-primary">Email the academy</a>
-        <a href="tel:+233209517130" class="btn btn-ghost">Call to enquire</a>
+        <a href="mailto:[email protected]" class="btn btn-primary">Email the academy</a>
+        <a href="tel:+233000000000" class="btn btn-ghost">Call to enquire</a>
       </div>
       <div class="contact-grid">
-        <div><div class="k">Email</div><div class="v">[nanisformulations@gmail.com]</div></div>
-        <div><div class="k">Phone</div><div class="v">+233 20 951 7130</div></div>
+        <div><div class="k">Email</div><div class="v">[email protected]</div></div>
+        <div><div class="k">Phone</div><div class="v">+233 00 000 0000</div></div>
         <div><div class="k">Location</div><div class="v">Accra, Ghana</div></div>
         <div><div class="k">Intake</div><div class="v">Rolling, by school</div></div>
       </div>
@@ -708,7 +796,42 @@
     });
   });
 
-  // pathway gauge fill on scroll into view
+  // testimonial slider
+  const slides = document.querySelectorAll('.t-slide');
+  const dotsWrap = document.getElementById('tDots');
+  let tIndex = 0;
+  let tTimer;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 't-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Show review ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = document.querySelectorAll('.t-dot');
+
+  function goTo(i) {
+    slides[tIndex].classList.remove('active');
+    dots[tIndex].classList.remove('active');
+    tIndex = (i + slides.length) % slides.length;
+    slides[tIndex].classList.add('active');
+    dots[tIndex].classList.add('active');
+  }
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function startAuto() {
+    if (reduceMotion) return;
+    tTimer = setInterval(() => goTo(tIndex + 1), 7000);
+  }
+  function stopAuto() { clearInterval(tTimer); }
+
+  document.getElementById('tPrev').addEventListener('click', () => { goTo(tIndex - 1); stopAuto(); startAuto(); });
+  document.getElementById('tNext').addEventListener('click', () => { goTo(tIndex + 1); stopAuto(); startAuto(); });
+  document.querySelector('.testimonial-stage').addEventListener('mouseenter', stopAuto);
+  document.querySelector('.testimonial-stage').addEventListener('mouseleave', startAuto);
+  startAuto();
+
   const gauge = document.getElementById('pathGauge');
   if (gauge) {
     const gaugeIO = new IntersectionObserver((entries) => {
