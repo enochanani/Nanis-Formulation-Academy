@@ -306,6 +306,47 @@
   .t-dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;}
   .t-dot.active{background:var(--amber-deep);}
 
+  /* ---------- ENROLLMENT FORM ---------- */
+  .enroll-form-section{padding:88px 0;background:var(--paper-2);border-bottom:1px solid var(--line);}
+  .ef-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:52px;align-items:start;}
+  .ef-intro h2{font-size:30px;margin-top:10px;}
+  .ef-intro p{color:var(--ink-soft);margin-top:14px;font-size:15.5px;}
+  .ef-note{
+    margin-top:22px;padding:14px 16px;background:var(--paper);border-left:2px solid #25D366;
+    font-size:13.5px;color:var(--ink-soft);
+  }
+  .ef-note b{color:var(--ink);}
+  .ef-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:32px;
+  }
+  .ef-field{margin-bottom:18px;}
+  .ef-field label{
+    display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;
+    text-transform:uppercase;color:var(--ink-soft);margin-bottom:7px;
+  }
+  .ef-field input, .ef-field select, .ef-field textarea{
+    width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:3px;
+    background:var(--paper-2);color:var(--ink);font-family:'Inter',sans-serif;font-size:14.5px;
+  }
+  .ef-field input:focus, .ef-field select:focus, .ef-field textarea:focus{
+    outline:none;border-color:var(--amber-deep);background:var(--paper);
+  }
+  .ef-field textarea{resize:vertical;min-height:80px;}
+  .ef-row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .ef-submit{
+    width:100%;display:flex;align-items:center;justify-content:center;gap:10px;
+    background:#25D366;color:#0b3b22;border:none;border-radius:3px;
+    padding:14px 20px;font-size:15px;font-weight:700;cursor:pointer;margin-top:6px;
+  }
+  .ef-submit:hover{background:#1fbd5a;}
+  .ef-submit svg{width:19px;height:19px;flex-shrink:0;}
+  .ef-req{font-size:11.5px;color:var(--ink-soft);margin-top:10px;text-align:center;}
+
+  @media (max-width:860px){
+    .ef-grid{grid-template-columns:1fr;}
+    .ef-row2{grid-template-columns:1fr;}
+  }
+
   .cta{padding:90px 0;background:var(--ink);color:var(--paper);text-align:center;}
   .cta h2{font-size:clamp(26px,4vw,40px);max-width:16ch;margin:16px auto 18px;}
   .cta p{color:rgba(245,239,222,0.72);max-width:52ch;margin:0 auto 34px;font-size:15.5px;}
@@ -371,7 +412,7 @@
       <a href="#schools">Schools</a>
       <a href="#testimonials">Reviews</a>
       <a href="#innovation">Innovation Centre</a>
-      <a href="#enroll" class="nav-cta">Enroll now</a>
+      <a href="#enroll-form" class="nav-cta">Enroll now</a>
     </nav>
   </div>
 </header>
@@ -420,7 +461,7 @@
         <p>Most short courses teach a recipe. Nanis Formulations Academy teaches the science underneath the recipe, so a graduate can troubleshoot a failed batch, adjust a formula when a raw material changes, and scale a product from a beaker to a production line with confidence.</p>
         <p>Every certificate programme sits inside a wider system built around five schools, a three level pathway, and a research centre dedicated to Ghanaian and African raw materials.</p>
         <div class="founder-tag">
-          <b>Led by a working formulator.</b> The academy is founded by ENOCH ANANI; the Lead Formulator of Nanis Formulations, a manufacturing firm, which means every module is grounded in what actually happens on a production floor.
+          <b>Led by a working formulator.</b> The academy is founded by the Lead Formulator of Nanis Formulations, a manufacturing firm, which means every module is grounded in what actually happens on a production floor.
         </div>
       </div>
     </div>
@@ -724,6 +765,73 @@
     </div>
   </section>
 
+  <!-- ENROLLMENT FORM -->
+  <section class="enroll-form-section" id="enroll-form">
+    <div class="wrap ef-grid">
+      <div class="ef-intro reveal">
+        <p class="eyebrow">Enroll</p>
+        <h2>Tell us about you</h2>
+        <p>Fill in a few details and we will pick up the conversation on WhatsApp to confirm your track, your school, and next steps.</p>
+        <div class="ef-note"><b>How this works.</b> When you tap "Send via WhatsApp," your details are placed into a WhatsApp message addressed to the academy. You just review it and hit send from your own WhatsApp.</div>
+      </div>
+
+      <form class="ef-card reveal" id="enrollForm">
+        <div class="ef-row2">
+          <div class="ef-field">
+            <label for="efName">Full name *</label>
+            <input type="text" id="efName" required placeholder="e.g. Ama Owusu">
+          </div>
+          <div class="ef-field">
+            <label for="efPhone">WhatsApp number *</label>
+            <input type="tel" id="efPhone" required placeholder="e.g. 024 000 0000">
+          </div>
+        </div>
+
+        <div class="ef-row2">
+          <div class="ef-field">
+            <label for="efTrack">Track</label>
+            <select id="efTrack">
+              <option value="">Select a track</option>
+              <option>Beginner (3 months)</option>
+              <option>Intermediate (6 months)</option>
+              <option>Advanced Formulator (1 year)</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="ef-field">
+            <label for="efSchool">School of interest</label>
+            <select id="efSchool">
+              <option value="">Select a school</option>
+              <option>School of Cleaning Product Science</option>
+              <option>School of Personal Care Science</option>
+              <option>School of Cosmetic Science (Future)</option>
+              <option>School of Formulation Science</option>
+              <option>School of Manufacturing &amp; Quality Systems</option>
+              <option>School of Business &amp; Brand Development</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="ef-field">
+          <label for="efLocation">Location (city / country)</label>
+          <input type="text" id="efLocation" placeholder="e.g. Accra, Ghana">
+        </div>
+
+        <div class="ef-field">
+          <label for="efNotes">Anything else we should know?</label>
+          <textarea id="efNotes" placeholder="Questions, preferred start date, etc."></textarea>
+        </div>
+
+        <button type="submit" class="ef-submit">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.87 11.88L4 20l4.24-1.11a7.9 7.9 0 0 0 3.8.97h.01a7.94 7.94 0 0 0 5.55-13.54zM12.05 18.4a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.6 6.6 0 1 1 12.24-3.5 6.56 6.56 0 0 1-6.65 6.59zm3.6-4.93c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.5.64-.62.77-.11.13-.23.15-.42.05a5.4 5.4 0 0 1-2.7-2.36c-.2-.35.2-.32.58-1.08.06-.13.03-.24-.02-.34-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.34h-.38c-.13 0-.34.05-.52.24-.18.2-.68.66-.68 1.6s.7 1.87.79 2c.1.13 1.37 2.1 3.33 2.94.46.2.83.32 1.11.41.47.15.9.13 1.24.08.38-.06 1.17-.48 1.33-.94.17-.46.17-.86.12-.94-.05-.09-.18-.14-.38-.24z"/></svg>
+          Send via WhatsApp
+        </button>
+        <p class="ef-req">* Required. Opens WhatsApp with your details filled in, ready to send.</p>
+      </form>
+    </div>
+  </section>
+
   <!-- CTA -->
 
   <section class="cta" id="enroll">
@@ -732,12 +840,12 @@
       <h2>Start at Level 1. Leave with a formula you can sell.</h2>
       <p>Applications for the School of Formulation Science foundation intake are open. Reach out to reserve a seat or to ask which school fits where you want to go.</p>
       <div class="btn-row">
-        <a href="mailto:[nanisformulations@gmail.com]" class="btn btn-primary">Email the academy</a>
-        <a href="tel:+233209517130" class="btn btn-ghost">Call to enquire</a>
+        <a href="mailto:[email protected]" class="btn btn-primary">Email the academy</a>
+        <a href="tel:+233000000000" class="btn btn-ghost">Call to enquire</a>
       </div>
       <div class="contact-grid">
-        <div><div class="k">Email</div><div class="v">[nanisformulations@gmail.com]</div></div>
-        <div><div class="k">Phone</div><div class="v">+233 20 951 7130</div></div>
+        <div><div class="k">Email</div><div class="v">[email protected]</div></div>
+        <div><div class="k">Phone</div><div class="v">+233 00 000 0000</div></div>
         <div><div class="k">Location</div><div class="v">Accra, Ghana</div></div>
         <div><div class="k">Intake</div><div class="v">Rolling, by school</div></div>
       </div>
@@ -757,7 +865,7 @@
       <a href="#pathway">Pathway</a>
       <a href="#schools">Schools</a>
       <a href="#innovation">Innovation Centre</a>
-      <a href="#enroll">Enroll</a>
+      <a href="#enroll-form">Enroll</a>
     </div>
   </div>
 </footer>
@@ -795,6 +903,38 @@
       document.getElementById('heroFill').style.height = '72%';
     });
   });
+
+  // enrollment form -> WhatsApp handoff
+  const enrollForm = document.getElementById('enrollForm');
+  if (enrollForm) {
+    enrollForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('efName').value.trim();
+      const phone = document.getElementById('efPhone').value.trim();
+      const track = document.getElementById('efTrack').value;
+      const school = document.getElementById('efSchool').value;
+      const location = document.getElementById('efLocation').value.trim();
+      const notes = document.getElementById('efNotes').value.trim();
+
+      if (!name || !phone) {
+        alert('Please fill in your name and WhatsApp number.');
+        return;
+      }
+
+      let msg = 'Hello Nanis Formulations Academy, I would like to enroll.\n\n';
+      msg += 'Name: ' + name + '\n';
+      msg += 'WhatsApp: ' + phone + '\n';
+      msg += 'Track: ' + (track || 'Not specified') + '\n';
+      msg += 'School interest: ' + (school || 'Not specified') + '\n';
+      if (location) msg += 'Location: ' + location + '\n';
+      if (notes) msg += 'Notes: ' + notes + '\n';
+
+      // Academy WhatsApp number in international format, no plus sign, no spaces
+      const academyNumber = '233209517130';
+      const url = 'https://wa.me/' + academyNumber + '?text=' + encodeURIComponent(msg);
+      window.open(url, '_blank');
+    });
+  }
 
   // testimonial slider
   const slides = document.querySelectorAll('.t-slide');
