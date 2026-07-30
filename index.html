@@ -321,6 +321,27 @@
   .t-dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;}
   .t-dot.active{background:var(--amber-deep);}
 
+  /* ---------- FAQ ---------- */
+  .faq{padding:88px 0;background:var(--paper);border-bottom:1px solid var(--line);}
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:22px 4px;
+    display:flex;align-items:center;gap:18px;
+    font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--ink);
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .q-num{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--amber-deep);
+    flex-shrink:0;width:30px;
+  }
+  .faq-item summary .q-icon{
+    margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:18px;color:var(--ink-soft);
+    transition:transform .25s ease;flex-shrink:0;
+  }
+  .faq-item[open] summary .q-icon{transform:rotate(45deg);}
+  .faq-answer{padding:0 4px 24px 48px;color:var(--ink-soft);font-size:14.5px;line-height:1.6;max-width:64ch;}
+
   /* ---------- TRAINING GALLERY ---------- */
   .gallery{padding:88px 0;background:var(--ink);color:var(--paper);}
   .gallery .section-head h2{color:var(--paper);}
@@ -445,6 +466,7 @@
       <a href="#pathway">Pathway</a>
       <a href="#schools">Schools</a>
       <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
       <a href="#innovation">Innovation Centre</a>
       <a href="#enroll-form" class="nav-cta">Enroll now</a>
     </nav>
@@ -496,7 +518,7 @@
         <p>Most short courses teach a recipe. Nanis Formulations Academy teaches the science underneath the recipe, so a graduate can troubleshoot a failed batch, adjust a formula when a raw material changes, and scale a product from a beaker to a production line with confidence.</p>
         <p>Every certificate programme sits inside a wider system built around five schools, a three level pathway, and a research centre dedicated to Ghanaian and African raw materials.</p>
         <div class="founder-tag">
-          <b>Led by a working formulator.</b> The academy is founded by Enoch Anani; the Lead Formulator of Nanis Formulations, a manufacturing firm, which means every module is grounded in what actually happens on a production floor.
+          <b>Led by a working formulator.</b> The academy is founded by the Lead Formulator of Nanis Formulations, a manufacturing firm, which means every module is grounded in what actually happens on a production floor.
         </div>
       </div>
     </div>
@@ -823,6 +845,51 @@
             <p>Every product is mixed and tested by hand first, so the science behind each step is understood before it is ever scaled up.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Before you enroll</p>
+        <h2>Frequently asked questions</h2>
+        <p>The most common questions we get on WhatsApp, answered here first.</p>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary><span class="q-num">Q01</span>Is training online or in person?<span class="q-icon">+</span></summary>
+          <div class="faq-answer">Nanis Formulations Academy uses a blended approach. Foundations and theory are delivered online, while practicals take place on site at the formulation centre. For practicals, students may choose to work from their own space or attend in person at the centre.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="q-num">Q02</span>Do I need my own equipment or ingredients?<span class="q-icon">+</span></summary>
+          <div class="faq-answer">No equipment is required before you start. A full prospectus listing the tools and ingredients you will need is shared during training. Weekly assignment materials, ingredients and tools are provided at the formulation centre, and you can choose to have these delivered to you or come in and complete your assignment on site.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="q-num">Q03</span>How big are the classes?<span class="q-icon">+</span></summary>
+          <div class="faq-answer">Class sizes are kept small so every student gets close attention. Beginner classes take 5 to 10 students, Intermediate classes take 10 to 15, and Advanced Formulator classes take 3 to 5.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="q-num">Q04</span>Is there an age requirement?<span class="q-icon">+</span></summary>
+          <div class="faq-answer">There is no strict age requirement. All safety protocols are strictly observed throughout training regardless of age.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="q-num">Q05</span>Do I get a certificate at the end?<span class="q-icon">+</span></summary>
+          <div class="faq-answer">Yes. A certificate is issued at a graduation ceremony on completion of your programme.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="q-num">Q06</span>How much does training cost?<span class="q-icon">+</span></summary>
+          <div class="faq-answer">Fees are shared directly on request. Message us on WhatsApp and we will send the current fee schedule for your chosen track.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="q-num">Q07</span>Can I pay in instalments?<span class="q-icon">+</span></summary>
+          <div class="faq-answer">Yes, instalment plans are available. Ask us on WhatsApp for the current payment options.</div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="q-num">Q08</span>Are fees refundable?<span class="q-icon">+</span></summary>
+          <div class="faq-answer">No. Fees are non-refundable.</div>
+        </details>
       </div>
     </div>
   </section>
