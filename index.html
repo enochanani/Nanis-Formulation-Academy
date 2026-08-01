@@ -41,6 +41,7 @@
 
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
+  html,body{overflow-x:hidden;max-width:100%;}
   body{
     margin:0;
     background:var(--paper);
@@ -445,7 +446,7 @@
     nav.links{
       position:fixed;top:67px;left:0;right:0;bottom:0;background:var(--paper);
       flex-direction:column;padding:30px 32px;gap:22px;transform:translateX(100%);
-      transition:transform .3s ease;z-index:99;
+      transition:transform .3s ease;z-index:500;
     }
     nav.links.open{transform:translateX(0);}
     .menu-btn{display:block;}
