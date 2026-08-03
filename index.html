@@ -286,6 +286,37 @@
   .bot-item .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#B9D6BC;letter-spacing:0.08em;}
   .bot-item h4{font-size:16.5px;margin-top:8px;color:#fff;font-weight:500;}
 
+  /* ---------- STUDENT SPOTLIGHT ---------- */
+  .spotlight{padding:88px 0;background:var(--paper-2);border-bottom:1px solid var(--line);}
+  .spotlight-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:52px;align-items:center;}
+  .spotlight-photo{
+    width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top center;
+    border-radius:8px;border:1px solid var(--line);
+  }
+  .spotlight-photo-cap{font-size:12px;color:var(--ink-soft);margin-top:10px;font-family:'IBM Plex Mono',monospace;}
+  .spotlight-text h2{font-size:28px;line-height:1.2;margin-top:10px;}
+  .spotlight-text p{color:var(--ink-soft);font-size:15px;margin-top:14px;line-height:1.6;}
+  .spotlight-products{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .spotlight-products span{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;
+    background:var(--paper);border:1px solid var(--line);padding:6px 11px;border-radius:20px;color:var(--ink-soft);
+  }
+  .spotlight-strip{display:flex;gap:10px;margin-top:22px;}
+  .spotlight-strip img{
+    width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:6px;border:1px solid var(--line);
+  }
+  .spotlight-tie{
+    margin-top:22px;padding:14px 16px;background:var(--paper);border-left:2px solid var(--sage-deep);
+    font-size:13.5px;color:var(--ink-soft);
+  }
+  .spotlight-tie b{color:var(--ink);}
+  .spotlight-tie a{color:var(--sage-deep);font-weight:600;}
+
+  @media (max-width:860px){
+    .spotlight-grid{grid-template-columns:1fr;}
+    .spotlight-strip{max-width:420px;}
+  }
+
   /* ---------- TESTIMONIALS ---------- */
   .testimonials{padding:88px 0;background:var(--paper);border-bottom:1px solid var(--line);}
   .testimonial-stage{
@@ -530,7 +561,7 @@
         <p>Most short courses teach a recipe. Nanis Formulations Academy teaches the science underneath the recipe, so a graduate can troubleshoot a failed batch, adjust a formula when a raw material changes, and scale a product from a beaker to a production line with confidence.</p>
         <p>Every certificate programme sits inside a wider system built around five schools, a three level pathway, and a research centre dedicated to Ghanaian and African raw materials.</p>
         <div class="founder-tag">
-          <b>Led by a working formulator.</b> The academy is founded by Enoch Anani; the Lead Formulator of Nanis Formulations, a manufacturing firm, which means every module is grounded in what actually happens on a production floor.
+          <b>Led by a working formulator.</b> The academy is founded by the Lead Formulator of Nanis Formulations, a manufacturing firm, which means every module is grounded in what actually happens on a production floor.
         </div>
       </div>
     </div>
@@ -780,6 +811,34 @@
         <div class="bot-item"><span class="tag mono">RESEARCH AREA</span><h4>Coconut</h4></div>
         <div class="bot-item"><span class="tag mono">RESEARCH AREA</span><h4>Local Clays</h4></div>
         <div class="bot-item"><span class="tag mono">RESEARCH AREA</span><h4>Other Ghanaian Botanicals</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDENT SPOTLIGHT -->
+  <section class="spotlight" id="spotlight">
+    <div class="wrap spotlight-grid">
+      <div class="reveal">
+        <img src="ellora-certificate.jpg" alt="Co-founders of Ellora Cosmetics holding their certificate of completion from Nanis Formulations Academy" class="spotlight-photo">
+        <p class="spotlight-photo-cap">Ellora Cosmetics &middot; Certificate of Completion</p>
+      </div>
+      <div class="spotlight-text reveal">
+        <p class="eyebrow">Student Success</p>
+        <h2>Ellora Cosmetics travelled for this training, and left with three product lines</h2>
+        <p>The co-founders of Ellora Cosmetics travelled from Kumasi and Takoradi for nine days of private training at Nanis. Practicals ran through the weekend at the formulation centre, ending in a graduation ceremony and a certificate of completion.</p>
+        <div class="spotlight-products">
+          <span>Bathing Bar Soap</span>
+          <span>Laundry Bar Soap</span>
+          <span>Liquid Shampoo (Rice-Based)</span>
+        </div>
+        <div class="spotlight-strip">
+          <img src="ellora-mixing.jpg" alt="Ellora Cosmetics co-founders mixing a formulation during practicals">
+          <img src="ellora-soap-bars.jpg" alt="Finished bar soap made by Ellora Cosmetics during training">
+          <img src="ellora-soap-holding.jpg" alt="Ellora Cosmetics co-founder holding a finished bar of soap">
+        </div>
+        <div class="spotlight-tie">
+          <b>From research to real product.</b> Ellora's shampoo was formulated using rice grown locally in Ghana, the same ingredient studied at our <a href="#innovation">Centre for African Ingredient Innovation</a>.
+        </div>
       </div>
     </div>
   </section>
